@@ -52,8 +52,7 @@ namespace WorkingWithVisualStudio
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
-            app.UseMvc();
+            app.UseMvcWithDefaultRoute();
         }
     }
 }
