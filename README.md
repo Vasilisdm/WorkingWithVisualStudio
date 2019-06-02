@@ -12,6 +12,10 @@
 * Get detailed information and control about application execution
 * Reload one or more browsers using Visual Studio
 * Reduce the number of HTTP requests and the amount of bandwidth required for JavaScript and CSS files
+* Create a unit test
+* Isolate components for unit testing
+* Run the same xUnit tests with different data values
+* Simplify the process of creating fake test objects
 
 ## Contributors
 
