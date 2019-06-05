@@ -7,7 +7,7 @@ namespace WorkingWithVisualStudio.Models
     {
         private static ProductRepository sharedRepository = new ProductRepository();
         private Dictionary<string, Product> products = new Dictionary<string, Product>();
-        public static ProductRepository SharedRepository => new ProductRepository();
+        public static ProductRepository SharedRepository => sharedRepository;
 
         public ProductRepository()
         {
