@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace WorkingWithVisualStudio.Models
 {
-    public class ProductRepository
+    public class ProductRepository : IRepository
     {
         private static ProductRepository sharedRepository = new ProductRepository();
         private Dictionary<string, Product> products = new Dictionary<string, Product>();
