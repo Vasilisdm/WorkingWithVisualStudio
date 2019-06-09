@@ -1,4 +1,4 @@
-# Working With Visua lStudio
+# Working With Visual Studio
 
 ## Description
 
