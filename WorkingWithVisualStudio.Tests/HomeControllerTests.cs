@@ -3,32 +3,21 @@ using Microsoft.AspNetCore.Mvc;
 using WorkingWithVisualStudio.Controllers;
 using WorkingWithVisualStudio.Models;
 using Xunit;
+using Moq;
 
 namespace WorkingWithVisualStudio.Tests
 {
     public class HomeControllerTests
     {
-        class ModelCompleteFakeRepository : IRepository
-        {
-            public IEnumerable<Product> Products { get; set; }
-
-            public void AddProduct(Product p)
-            {
-                // not required for test
-            }
-        }
-
 
         [Theory]
         [ClassData(typeof(ProductTestData))]
         public void IndexActionModelIsComplete(Product[] products)
         {
             // Arrange
-            var controller = new HomeController();
-            controller.Repository = new ModelCompleteFakeRepository
-            {
-                Products = products
-            };
+            var mock = new Mock<IRepository>();
+            mock.SetupGet(m => m.Products).Returns(products);
+            var controller = new HomeController { Repository = mock.Object };
 
             // Act
             var model = (controller.Index() as ViewResult)?.ViewData.Model
