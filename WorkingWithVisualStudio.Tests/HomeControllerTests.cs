@@ -42,7 +42,7 @@ namespace WorkingWithVisualStudio.Tests
             var result = controller.Index();
 
             // Assert
-            Assert.Equal(1, repo.PropertyCounter);
+            mock.VerifyGet(m => m.Products, Times.Once);
         }
     }
 }
